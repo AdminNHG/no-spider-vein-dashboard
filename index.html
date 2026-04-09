@@ -430,6 +430,7 @@
             <th>Client Name</th>
             <th>Last Appointment Service</th>
             <th>Next Appointment Service</th>
+            <th>Next Appointment Date</th>
           </tr>
         </thead>
         <tbody id="clientTable"></tbody>
@@ -445,11 +446,11 @@
 
 <script>
   const clients = [
-    { name: "Kristin Stakkerud",          last: "", next: "Pre-examination" },
-    { name: "Ana Francis Aguilar",         last: "", next: "Pre-examination" },
-    { name: "Susan Haag-Setre",            last: "", next: "Spider Vein Treatment" },
-    { name: "Irene Iden",                  last: "", next: "Pre-examination" },
-    { name: "Anne Margareth Stenhammer",   last: "", next: "Pre-examination" },
+    { name: "Kristin Stakkerud",          last: "", next: "Pre-examination",       nextDate: "04/21/2026 11:25 AM" },
+    { name: "Ana Francis Aguilar",         last: "", next: "Pre-examination",       nextDate: "04/29/2026 03:00 PM" },
+    { name: "Susan Haag-Setre",            last: "", next: "Spider Vein Treatment", nextDate: "05/11/2026 10:30 AM" },
+    { name: "Irene Iden",                  last: "", next: "Pre-examination",       nextDate: "04/29/2026 09:20 AM" },
+    { name: "Anne Margareth Stenhammer",   last: "", next: "Pre-examination",       nextDate: "04/18/2026 11:40 AM" },
   ];
 
   function pillClass(svc) {
@@ -481,6 +482,7 @@
         <td>
           <span class="service-pill ${pillClass(c.next)}">${pillLabel(c.next)}</span>
         </td>
+        <td style="white-space:nowrap;color:#374151;font-size:0.85rem;">${c.nextDate || '&ndash;'}</td>
       </tr>`;
   });
 
